@@ -14,3 +14,9 @@ tests/**/coverage/
 *.ntvs*
 *.njsproj
 *.sln
+
+#data
+src/data/
+*.gtf
+*.tsv
+*.add_sample_infos

@@ -316,7 +316,7 @@ export default {
       } 
       catch (error) {
         console.error('获取患病率数据失败:', error)
-        this.$message.error('获取数据失败，请检查网络连接')
+        this.$message.error('数据获取失败，请检查网络连接')
       } 
       finally {
         this.loading = false
@@ -349,8 +349,10 @@ export default {
             }
           })
 
-          diseases: this.pieQuery.diseases[index],
-          data: res.data || []
+          return {
+            diseases: disease,
+            data
+          }
         })
 
         if (allData.some(item => item.data.length > 0)) {
@@ -476,10 +478,7 @@ export default {
           name: '病例分布',
           type: 'pie',
           radius: '50%',
-          data: pieData.data.map(item => ({
-            name: item.filterKey,
-            value: item.conditionValue
-          })),
+          data: pieData.data,
           color: [
             '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae',
             '#749f83', '#ca8622', '#bda29a', '#6e7074', '#546570',
