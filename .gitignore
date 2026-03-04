@@ -19,4 +19,5 @@ tests/**/coverage/
 src/data/
 *.gtf
 *.tsv
+*.csv
 *.add_sample_infos

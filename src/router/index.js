@@ -56,6 +56,84 @@ export const constantRoutes = [
   },
 
   {
+    path: '/statistics',
+    component: Layout,
+    children: [{
+      path: 'statistics',
+      name: 'Statistics',
+      component: () => import('@/views/statistics/index'),
+      meta: { title: '数据', icon: 'table' }
+    }]
+  },
+  
+  {
+    path: '/about',
+    component: Layout,
+    children: [{
+      path: 'about',
+      name: 'About',
+      component: () => import('@/views/about/index'),
+      meta: { title: '介绍', icon: 'example' }
+    }]
+  },
+
+  {
+    path: '/search',
+    component: Layout,
+    redirect: '/search/structure',
+    name: 'Search',
+    meta: { title: '查询', icon: 'form' },
+    children: [
+      {
+        path: 'structure',
+        name: 'Structure',
+        component: () => import('@/views/structure/index'),
+        meta: { title: '转录本结构' }
+      },
+      {
+        path: 'information',
+        name: 'Information',
+        component: () => import('@/views/information/index'),
+        meta: { title: '注释信息' },
+        children: [
+          {
+            path: 'geneSearch',
+            name: 'GeneSearch',
+            component: () => import('@/views/information/geneSearch/index'),
+            meta: { title: '基因信息查询' }
+          },
+          {
+            path: 'transcriptSearch',
+            name: 'TranscriptSearch',
+            component: () => import('@/views/information/transcriptSearch/index'),
+            meta: { title: '转录本信息查询' }
+          }
+        ]
+      },
+      {
+        path: 'expression',
+        name: 'Expression',
+        component: () => import('@/views/expression/index'),
+        meta: { title: '表达量' },
+        children: [
+          {
+            path: 'geneSearch',
+            name: 'GeneSearch',
+            component: () => import('@/views/expression/geneSearch/index'),
+            meta: { title: '基因表达量查询' }
+          },
+          {
+            path: 'transcriptSearch',
+            name: 'TranscriptSearch',
+            component: () => import('@/views/expression/transcriptSearch/index'),
+            meta: { title: '转录本表达量查询' }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
     path: '/sample',
     component: Layout,
     redirect: '/sample/table',
@@ -73,78 +151,6 @@ export const constantRoutes = [
         name: 'DiseaseMap',
         component: () => import('@/views/diseaseMap/index'),
         meta: { title: '测试用样本分布', icon: 'table' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
       }
     ]
   },
