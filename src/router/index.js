@@ -31,11 +31,11 @@ import Layout from '@/layout'
  * all roles can be accessed
  */
 export const constantRoutes = [
-  {
+/*   {
     path: '/login',
     component: () => import('@/views/login/index'),
     hidden: true
-  },
+  }, */
 
   {
     path: '/404',
@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '主页', icon: 'dashboard' }
+      meta: { title: 'HomePage', icon: 'dashboard' }
     }]
   },
 
@@ -62,7 +62,7 @@ export const constantRoutes = [
       path: 'statistics',
       name: 'Statistics',
       component: () => import('@/views/statistics/index'),
-      meta: { title: '数据', icon: 'table' }
+      meta: { title: 'Statistics', icon: 'table' }
     }]
   },
 
@@ -73,7 +73,7 @@ export const constantRoutes = [
       path: 'about',
       name: 'About',
       component: () => import('@/views/about/index'),
-      meta: { title: '介绍', icon: 'example' }
+      meta: { title: 'About', icon: 'example' }
     }]
   },
 
@@ -82,31 +82,31 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/search/structure',
     name: 'Search',
-    meta: { title: '查询', icon: 'form' },
+    meta: { title: 'Search', icon: 'form' },
     children: [
       {
         path: 'structure',
         name: 'Structure',
         component: () => import('@/views/structure/index'),
-        meta: { title: '转录本结构' }
+        meta: { title: 'Transcript structure' }
       },
       {
         path: 'information',
         name: 'Information',
         component: () => import('@/views/information/index'),
-        meta: { title: '注释信息' },
+        meta: { title: 'Annotation' },
         children: [
           {
             path: 'geneSearch',
             name: 'GeneSearch',
             component: () => import('@/views/information/geneSearch/index'),
-            meta: { title: '基因信息查询' }
+            meta: { title: 'Gene Information' }
           },
           {
             path: 'transcriptSearch',
             name: 'TranscriptSearch',
             component: () => import('@/views/information/transcriptSearch/index'),
-            meta: { title: '转录本信息查询' }
+            meta: { title: 'Transcript Information' }
           }
         ]
       },
@@ -114,19 +114,19 @@ export const constantRoutes = [
         path: 'expression',
         name: 'Expression',
         component: () => import('@/views/expression/index'),
-        meta: { title: '表达量' },
+        meta: { title: 'Expression Level' },
         children: [
           {
             path: 'geneSearch',
             name: 'GeneSearch',
             component: () => import('@/views/expression/geneSearch/index'),
-            meta: { title: '基因表达量查询' }
+            meta: { title: 'Gene Search' }
           },
           {
             path: 'transcriptSearch',
             name: 'TranscriptSearch',
             component: () => import('@/views/expression/transcriptSearch/index'),
-            meta: { title: '转录本表达量查询' }
+            meta: { title: 'Transcript Search' }
           }
         ]
       }
@@ -138,24 +138,24 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/sample/table',
     name: 'Sample',
-    meta: { title: '测试用样本数据', icon: 'el-icon-s-help' },
+    meta: { title: 'Tools', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '测试用样本查询', icon: 'table' }
+        meta: { title: 'Browser', icon: 'table' }
       },
       {
         path: 'diseaseMap',
         name: 'DiseaseMap',
         component: () => import('@/views/diseaseMap/index'),
-        meta: { title: '测试用样本分布', icon: 'table' }
+        meta: { title: 'Imputation', icon: 'table' }
       }
     ]
   },
 
-  {
+/*   {
     path: 'external-link',
     component: Layout,
     children: [
@@ -164,7 +164,7 @@ export const constantRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },
+  }, */
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

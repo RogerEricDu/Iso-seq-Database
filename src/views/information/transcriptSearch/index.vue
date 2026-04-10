@@ -1,25 +1,25 @@
 <template>
   <div class="app-container">
-    <!-- ⭐ 条件区域 -->
+    <!-- ⭐ Filter Section -->
     <div class="filter-container">
       <el-form :inline="true" :model="query">
 
-        <!-- 输入框 -->
-        <el-form-item label="转录本">
-          <el-input v-model="query.transcript" placeholder="请输入转录本号" />
+        <!-- Input Field -->
+        <el-form-item label="Transcript">
+          <el-input v-model="query.transcript" placeholder="Please enter transcript ID" />
         </el-form-item>
 
-        <!-- 查询与重置 -->
+        <!-- Query and Reset -->
         <div class="button-wrapper">
-          <el-button type="primary" @click="filterTranscript">查询转录本注释信息</el-button>
-          <el-button @click="resetFilters">重置</el-button>
+          <el-button type="primary" @click="filterTranscript">Query Transcript Annotation Information</el-button>
+          <el-button @click="resetFilters">Reset</el-button>
         </div>
       </el-form>
     </div>
 
     <br>
 
-    <!-- 表格呈现 -->
+    <!-- Table Display -->
     <el-table
       v-loading="listLoading"
       :data="paginatedList"
@@ -42,7 +42,7 @@
       </el-table-column>
     </el-table>
 
-    <!-- 分页组件 -->
+    <!-- Pagination Component -->
     <div class="pagination" style="text-align:center; margin-top:20px;">
       <el-pagination
         background
@@ -70,14 +70,14 @@ export default {
       pageSize: 10, // 每页显示条数
       query: { transcript: '' }, // ⭐ 存放筛选条件
       columns: [
-        { label: '转录本号', prop: 'transcriptId', width: 210 },
-        { label: '关联基因名', prop: 'geneName', width: 200 },
-        { label: '关联基因号', prop: 'geneId', width: 230 },
-        { label: '染色体', prop: 'chromosome', width: 100 },
-        { label: '起始位置', prop: 'start', width: 110 },
-        { label: '终止位置', prop: 'end', width: 110 },
-        { label: '方向', prop: 'strand', width: 100 },
-        { label: '基因类型', prop: 'geneType', width: 150 }
+        { label: 'TranscriptId', prop: 'transcriptId', width: 300 },
+        { label: 'GeneName', prop: 'geneName', width: 250 },
+        { label: 'GeneId', prop: 'geneId', width: 250 },
+        { label: 'Chromosome', prop: 'chromosome', width: 150 },
+        { label: 'Start', prop: 'start', width: 150 },
+        { label: 'End', prop: 'end', width: 150 },
+        { label: 'Strand', prop: 'strand', width: 150 },
+        { label: 'GeneType', prop: 'geneType', width: 200 }
       ]
     }
   },
