@@ -1,19 +1,19 @@
 <template>
   <div class="page-container">
 
-    <!-- 查询区域 -->
+    <!-- Search Panel -->
     <div class="search-panel">
 
       <el-input
         v-model="keyword"
-        placeholder="输入 transcriptId "
+        placeholder="Enter transcript ID"
         clearable
         class="search-input"
         @keyup.enter.native="searchTranscript"
       />
 
-      <el-button type="primary" @click="searchTranscript">查询转录本表达量</el-button>
-      <el-button @click="resetSearch">重置</el-button>
+      <el-button type="primary" @click="searchTranscript">Search Transcript Expression</el-button>
+      <el-button @click="resetSearch">Reset</el-button>
 
       <el-switch
         v-model="useLog"
@@ -23,7 +23,7 @@
 
     </div>
 
-    <!-- 图表区域 -->
+    <!-- Chart Area -->
 
     <div
       ref="chart"

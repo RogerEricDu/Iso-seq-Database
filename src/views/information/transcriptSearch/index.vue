@@ -6,7 +6,7 @@
 
         <!-- Input Field -->
         <el-form-item label="Transcript">
-          <el-input v-model="query.transcript" placeholder="Please enter transcript ID" />
+          <el-input v-model="query.transcript" placeholder="Please enter transcript ID" style="width: 300px"/>
         </el-form-item>
 
         <!-- Query and Reset -->

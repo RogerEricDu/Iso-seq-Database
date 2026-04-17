@@ -1,19 +1,19 @@
 <template>
   <div class="page-container">
 
-    <!-- 查询区域 -->
+    <!-- Search Panel -->
     <div class="search-panel">
 
       <el-input
         v-model="keyword"
-        placeholder="输入 GeneId 或 GeneName"
+        placeholder="Enter Gene ID or Gene Name"
         clearable
         class="search-input"
         @keyup.enter.native="searchGene"
       />
 
-      <el-button type="primary" @click="searchGene">查询基因表达量</el-button>
-      <el-button @click="resetSearch">重置</el-button>
+      <el-button type="primary" @click="searchGene">Search Gene Expression</el-button>
+      <el-button @click="resetSearch">Reset</el-button>
 
       <el-switch
         v-model="useLog"
@@ -23,7 +23,7 @@
 
     </div>
 
-    <!-- 图表区域 -->
+    <!-- Chart Area -->
 
     <div
       ref="chart"
