@@ -139,38 +139,38 @@ export default {
       features: [
         {
           title: 'Transcript Search',
-          description: 'Quickly search transcripts by ID, gene name, or genomic location with auto-complete suggestions',
+          description: 'Quickly search transcripts by ID, gene name, or genomic location with auto-complete suggestions.',
           icon: 'form',
           color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
         },
         {
           title: 'Expression Analysis',
-          description: 'View expression levels across different samples and conditions with interactive charts',
+          description: 'View expression levels across different samples and conditions with interactive charts.',
           icon: 'table',
           color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
         },
         {
           title: 'Structure Visualization',
-          description: 'Explore full-length transcript sequences with coverage plots and annotation tracks',
+          description: 'Explore full-length transcript sequences with coverage plots and annotation tracks.',
           icon: 'example',
           color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
         },
         {
           title: 'Annotation Information',
-          description: 'Access comprehensive gene and transcript annotation data',
-          icon: 'documentation',
+          description: 'Access comprehensive gene and transcript annotation data.',
+          icon: 'annotation-dots',
           color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
         },
         {
           title: 'Sample Browser',
-          description: 'Browse and filter samples across different conditions and tissue types',
+          description: 'Browse and filter samples across different conditions and tissue types.',
           icon: 'tree',
           color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
         },
         {
           title: 'Data Download',
-          description: 'Download transcript sequences, expression matrices, and analysis results',
-          icon: 'zip',
+          description: 'Download transcript sequences, expression matrices, and analysis results.',
+          icon: 'data',
           color: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
         }
       ]
